@@ -2,10 +2,31 @@
 //
 
 #include <iostream>
+using namespace std;
+
+void some() {
+	float  a, b;
+	cout << 'a';
+	cin >> a;
+	cout << 'b';
+	cin >> b;
+	if (b == 0) {
+		throw "Error";
+		return;
+	}
+	cout << "a/b" << a / b << endl;
+
+}
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	try {
+		some();
+	}
+	catch (char *h) {
+		cout << h << endl;
+	}
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
