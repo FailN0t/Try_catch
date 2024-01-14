@@ -18,6 +18,7 @@ void some() {
 	}
 	catch(string s){
 		cout << "catch1" << endl;
+		throw s;
 	}
 	cout << "a/b" << a / b << endl;
 	
