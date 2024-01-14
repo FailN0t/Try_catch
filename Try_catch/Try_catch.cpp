@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 void some() {
@@ -10,11 +11,16 @@ void some() {
 	cin >> a;
 	cout << 'b';
 	cin >> b;
-	if (b == 0) {
-		throw "Error";
-		return;
+	try {
+		if (b == 0) {
+			throw (string)"Error";
+		}
+	}
+	catch(string s){
+		cout << "catch1" << endl;
 	}
 	cout << "a/b" << a / b << endl;
+	
 
 }
 
@@ -24,8 +30,9 @@ int main()
 	try {
 		some();
 	}
-	catch (char *h) {
-		cout << h << endl;
+	catch (string s) {
+		cout << "catch2" << endl;
+		cout << s << endl;
 	}
 }
 
