@@ -4,37 +4,29 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
-void some() {
-	float  a, b;
-	cout << 'a';
-	cin >> a;
-	cout << 'b';
-	cin >> b;
-	try {
-		if (b == 0) {
-			throw (string)"Error";
+namespace igr {
+	void some() {
+		std::cout << "hello" << std::endl;
+	}
+	namespace igr3 {
+		void some() {
+			std::cout << "hello3" << std::endl;
 		}
 	}
-	catch(string s){
-		cout << "catch1" << endl;
-		throw s;
-	}
-	cout << "a/b" << a / b << endl;
-	
-
 }
-
+namespace {
+	void some() {
+		std::cout << "hello2" << std::endl;
+	}
+}
 
 int main()
 {
-	try {
-		some();
-	}
-	catch (string s) {
-		cout << "catch2" << endl;
-		cout << s << endl;
-	}
+
+	::some();
+	igr::some();
+	igr::igr3::some();
+
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
